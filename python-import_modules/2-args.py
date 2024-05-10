@@ -16,4 +16,3 @@ if number >= 1:
         if number != 0:
             print("{}: {}".format(number, arg))
         number += 1
-
