@@ -9,6 +9,10 @@ if __name__ == "__main__":
     else:
         print("{} arguments:".format(number))
 
-    for arg in range(number):
-        print("{}: {}".format(arg + 1, argv[arg + 1]))
+if number >= 1:
+    number = 0
+    for arg in argv:
+        if number != 0:
+            print("{}: {}".format(number, arg))
+        number += 1
 
