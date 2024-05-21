@@ -9,7 +9,8 @@ First import function to the varaible add_integer:
     
     >>> add_integer = __import__('0-add_integer').add_integer
 
-Now use it:
+Test for success
+================
 
 Test_1 adding two integers
 ----------------------
@@ -30,6 +31,10 @@ Test_4 adding a float with a negative integer
 --------------------------
     >>> add_integer(100.3, -2)
     98
+
+================
+Test for fail
+================
 
 Test_5 adding an integer with a string
 --------------------------
