@@ -12,38 +12,64 @@ First import function to the varaible add_integer:
 Test for success
 ================
 
-Test_1 adding two integers
-----------------------
     >>> add_integer(2, 1)
     3
 
-Test_2 adding two integer with b being a negative value
--------------------------------------------------------------
     >>> add_integer(100, -2)
     98
 
-Test_3 passing only one argument with b initiate to 98
---------------------------
+    >>> add_integer(-2, 100)
+    98
+
     >>> add_integer(2)
     100
 
-Test_4 adding a float with a negative integer
---------------------------
     >>> add_integer(100.3, -2)
+    98
+
+    >>> add_integer(-2.2, 100.3)
     98
 
 ================
 Test for fail
 ================
 
-Test_5 adding an integer with a string
---------------------------
+    >>> add_integer("Holberton", 6)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
     >>> add_integer(4, "School")
     Traceback (most recent call last):
     TypeError: b must be an integer
 
-Test_6 adding just first parameter as None
-------------------------------------------
+    >>> add_integer("Holberton", "School")
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
     >>> add_integer(None)
     Traceback (most recent call last):
     TypeError: a must be an integer
+
+    >>> add_integer()
+    Traceback (most recent call last):
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+    >>> add_integer(30, 35, 40)
+    Traceback (most recent call last):
+    TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+    >>> add_integer(100, None)
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    >>> add_integer(45, [50, 60])
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    >>> add_integer(float("nan"))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
+
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
