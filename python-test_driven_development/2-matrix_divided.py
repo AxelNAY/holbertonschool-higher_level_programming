@@ -10,8 +10,15 @@ def matrix_divided(matrix, div):
     div (int, float): divisor
 
     Returns:
-        list of lists: all elements divided inside a new matrix"""
-
+        list of lists: all elements divided inside a new matrix
+    
+    Raises:
+    TypeError: If the matrix is not a list of integer or float
+    of integers or floats,
+               or if each row of the matrix does not have the same size,
+               or if the divisor is not a number.
+    ZeroDivisionError: If the divisor is zero.
+    """
     if type(matrix) != list or matrix == []:
         raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
 
