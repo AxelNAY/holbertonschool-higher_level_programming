@@ -19,8 +19,9 @@ def matrix_divided(matrix, div):
                or if the divisor is not a number.
     ZeroDivisionError: If the divisor is zero.
     """
+    error = "matrix must be a matrix (list of lists) of integers/floats"
     if type(matrix) != list or matrix == []:
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError(error)
 
     # capture the first row len
     len_row = len(matrix[0])
@@ -34,12 +35,14 @@ def matrix_divided(matrix, div):
     # validate rows len in matrix and values inside each list
     for idx in matrix:
         if type(idx) != list or idx == []:
-            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+            raise TypeError(error)
         if len(idx) == len_row:
             for j in idx:
                 if type(j) != int and type(j) != float:
-                    raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+                    raise TypeError(error)
         else:
-            raise TypeError("Each row of the matrix must have the same size")
+            raise TypeError(
+                    "Each row of the matrix must have the same size")
+    mat_code = map(lambda x: list(map(lambda y: round(y/div, 2), x)), matrix)
 
-    return list(map(lambda x: list(map(lambda y: round(y/div, 2), x)), matrix))
+    return list(mat_code)
