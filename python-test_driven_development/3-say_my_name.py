@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""Contains a function who print My name is <first name> <last name>
-args: first name and last name must be a string
-return: print first name and last name"""
+"""Contains a function who print My name is <first name> <last name>"""
 
 
 def say_my_name(first_name, last_name=""):
@@ -11,4 +9,4 @@ def say_my_name(first_name, last_name=""):
     if not isinstance(last_name, str):
         raise TypeError("last_name must be a string")
 
-    print("My name is {} {}".format(first_name, last_name))
+    print(f"My name is {first_name} {last_name}")
