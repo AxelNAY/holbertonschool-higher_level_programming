@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Contains a function who print My name is <first name> <last name>"""
+"""Contains a function who print My name is <first name> <last name>
+args: first name and last name must be a string
+return: print first name and last name"""
 
 
 def say_my_name(first_name, last_name=""):
