@@ -1,0 +1,36 @@
+doctest for 4-print_square.py
+============================
+This function that divides all elements of a matrix.
+
+>>> print_square = __import__('4-print_square').say_my_name
+
+Test for success
+================
+
+>>> print_square(2)
+##
+##
+
+=================
+Test for fail
+=================
+
+>>> print_square(12.3)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square("Holberton")
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square(-4)
+Traceback (most recent call last):
+TypeError: size must be >= 0
+
+>>> print_square(2, 2)
+Traceback (most recent call last):
+TypeError: print_square() takes 1 positional argument but 2 were given
+
+>>> print_square()
+Traceback (most recent call last):
+TypeError: print_square() missing 1 required positional argument: 'size'
