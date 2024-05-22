@@ -20,7 +20,8 @@ def matrix_divided(matrix, div):
     ZeroDivisionError: If the divisor is zero.
     """
     error = "matrix must be a matrix (list of lists) of integers/floats"
-    if type(matrix) != list or matrix == []:
+     if not isinstance(matrix, list) or \
+       not all(isinstance(row, list) for row in matrix):
         raise TypeError(error)
 
     # capture the first row len
