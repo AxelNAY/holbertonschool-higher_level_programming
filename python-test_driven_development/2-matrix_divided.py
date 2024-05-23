@@ -20,30 +20,20 @@ def matrix_divided(matrix, div):
     ZeroDivisionError: If the divisor is zero.
     """
     error = "matrix must be a matrix (list of lists) of integers/floats"
-     if not isinstance(matrix, list) or \
-       not all(isinstance(row, list) for row in matrix):
+    if not isinstance(matrix, list) or \
+            not all(isinstance(row, list) for row in matrix):
         raise TypeError(error)
 
-    # capture the first row len
     len_row = len(matrix[0])
+    if not all(len(row) == len_row for row in matrix):
+        raise TypeError("Each row of the matrix must have the same size")
 
-    # validate div conditions
-    if type(div) != int and type(div) != float:
+    if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
-    elif div == 0:
+
+    if div == 0:
         raise ZeroDivisionError("division by zero")
 
-    # validate rows len in matrix and values inside each list
-    for idx in matrix:
-        if type(idx) != list or idx == []:
-            raise TypeError(error)
-        if len(idx) == len_row:
-            for j in idx:
-                if type(j) != int and type(j) != float:
-                    raise TypeError(error)
-        else:
-            raise TypeError(
-                    "Each row of the matrix must have the same size")
-    mat_code = map(lambda x: list(map(lambda y: round(y/div, 2), x)), matrix)
-
-    return list(mat_code)
+    new_matrix = [[round(elem / div, 2)
+        for elem in row] for row in matrix]
+    return new_matrix
