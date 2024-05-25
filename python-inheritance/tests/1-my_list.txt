@@ -1,10 +1,8 @@
 doctest for 1-my_list.py
-=============================
+============================
+This function prints the list, but sorted (ascending sort)
 
-This text file contains test cases for the function ``my_list``.
-First import function to the variable my_list:
-    
->>> Mylist = __import__('1-my_list').Mylist
+>>> MyList = __import__('1-my_list').MyList
 
 Test for success
 ================
@@ -36,14 +34,14 @@ Test for success
 [-1, -4, -2, -3, -5]
 
 >>> my_list = MyList()
->>> my_list.append("Holberton")
->>> my_list.append("School")
+>>> my_list.append("baguette")
+>>> my_list.append("fromage")
 >>> print(my_list)
-['Holberton', 'School']
+['baguette', 'fromage']
 >>> my_list.print_sorted()
-['Holberton', 'School']
+['baguette', 'fromage']
 >>> print(my_list)
-['Holberton', 'School']
+['baguette', 'fromage']
 
 >>> my_list = MyList()
 >>> print(my_list)
