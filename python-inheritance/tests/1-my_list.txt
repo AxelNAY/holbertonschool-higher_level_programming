@@ -4,7 +4,7 @@ doctest for 1-my_list.py
 This text file contains test cases for the function ``my_list``.
 First import function to the variable my_list:
     
-    >>> my_list = __import__('1-my_list').my_list
+>>> Mylist = __import__('1-my_list').Mylist
 
 Test for success
 ================
