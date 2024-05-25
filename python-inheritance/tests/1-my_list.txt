@@ -1,0 +1,54 @@
+doctest for 1-my_list.py
+=============================
+
+This text file contains test cases for the function ``my_list``.
+First import function to the variable my_list:
+    
+    >>> my_list = __import__('1-my_list').my_list
+
+Test for success
+================
+
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+
+>>> my_list = MyList()
+>>> my_list.append(-1)
+>>> my_list.append(-4)
+>>> my_list.append(-2)
+>>> my_list.append(-3)
+>>> my_list.append(-5)
+>>> print(my_list)
+[-1, -4, -2, -3, -5]
+>>> my_list.print_sorted()
+[-5, -4, -3, -2, -1]
+>>> print(my_list)
+[-1, -4, -2, -3, -5]
+
+>>> my_list = MyList()
+>>> my_list.append("Holberton")
+>>> my_list.append("School")
+>>> print(my_list)
+['Holberton', 'School']
+>>> my_list.print_sorted()
+['Holberton', 'School']
+>>> print(my_list)
+['Holberton', 'School']
+
+>>> my_list = MyList()
+>>> print(my_list)
+[]
+>>> my_list.print_sorted()
+[]
+>>> print(my_list)
+[]
