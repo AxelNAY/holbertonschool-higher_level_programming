@@ -8,7 +8,10 @@ class Rectangle(BaseGeometry):
     """Define a Rectangle."""
 
     def __init__(self, width, height):
-        """Initialize a new rectangle"""
+        """Initialize a new rectangle.
+        Args:
+            width (int): width of the rectangle
+            height (int): height of the rectangle"""
         self.integer_validator("width", width)
         self.__width = width
         self.integer_validator("height", height)
@@ -16,8 +19,8 @@ class Rectangle(BaseGeometry):
 
     def area(self):
         """Return the square area"""
-         return self.__width * self.__height
+        return self.__width * self.__height
 
     def __str__(self):
-        """Print Rectangle with the width and height"""
+        """print Rectangle with the width and height"""
         return ("[Rectangle] {}/{}".format(self.__width, self.__height))
