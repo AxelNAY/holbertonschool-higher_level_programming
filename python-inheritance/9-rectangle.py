@@ -8,11 +8,7 @@ class Rectangle(BaseGeometry):
     """Define a Rectangle."""
 
     def __init__(self, width, height):
-        """Initialize a new rectangle.
-
-        Args:
-            width (int): width of the rectangle
-            height (int): height of the rectangle"""
+        """Initialize a new rectangle"""
         self.integer_validator("width", width)
         self.__width = width
         self.integer_validator("height", height)
