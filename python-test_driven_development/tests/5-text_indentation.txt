@@ -1,6 +1,6 @@
 doctest for 5-text_indentation.py
 ============================
-This function that divides all elements of a matrix.
+function that prints a text with 2 new lines after each of these characters: ., ? and :
 
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
@@ -10,10 +10,14 @@ Test for success
 >>> text_indentation("Holberton")
 Holberton
 
->>> text_indentation("Hello World. My name is Axel")
+>>> text_indentation("Hello World. What's your name? My name is: Axel)
 Hello World.
 <BLANKLINE>
-My name is Axel
+What's your name?
+<BLANKLINE>
+My name is:
+<BLANKLINE>
+Axel
 
 =================
 Test for fail
