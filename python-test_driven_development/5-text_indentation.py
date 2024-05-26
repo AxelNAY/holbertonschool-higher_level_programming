@@ -22,7 +22,7 @@ def text_indentation(text):
         if text[i] in symbols:
             new_text += "\n\n"
             i += 1
-            while i < len(text) and text[i + 1] == ' ':
+            while i < len(text) and text[i] == " ":
                 i += 1
             continue
         i += 1
