@@ -9,7 +9,7 @@ Test for success
 
 >>> text_indentation("Hello World. My name is Axel")
 Hello World.
-
+<BLANKLINE>
 My name is Axel
 
 =================
