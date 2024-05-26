@@ -7,8 +7,8 @@ function that prints a text with 2 new lines after each of these characters: ., 
 Test for success
 ================
 
->>> text_indentation("Holberton")
-Holberton
+>>> text_indentation("Nonuni")
+Nonuni
 
 >>> text_indentation("Hello World. What's your name? My name is: Axel")
 Hello World.
@@ -23,7 +23,7 @@ Axel
 Test for fail
 =================
 
->>> text_indentation(3)
+>>> text_indentation(2)
 Traceback (most recent call last):
 TypeError: text must be a string
 
@@ -31,6 +31,6 @@ TypeError: text must be a string
 Traceback (most recent call last):
 TypeError: text_indentation() missing 1 required positional argument: 'text'
 
->>> text_indentation("Holberton", 2)
+>>> text_indentation("spaceship", 2)
 Traceback (most recent call last):
 TypeError: print_square() takes 1 positional argument but 2 were given
