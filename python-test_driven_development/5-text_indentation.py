@@ -4,7 +4,7 @@
 
 def text_indentation(text):
     """prints a text with 2 new lines after one of these characters: ., ? or :
-    
+
     Args:
     text (str): a long text with symbol.
 
