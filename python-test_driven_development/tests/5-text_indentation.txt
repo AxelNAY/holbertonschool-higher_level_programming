@@ -10,18 +10,22 @@ Test for success
 >>> text_indentation("Nonuni")
 Nonuni
 
->>> text_indentation("Hello World. What's your name? My name is: Axel")
-Hello World.
+>>> text_indentation("Test: hey?...nice")
+Test:
 <BLANKLINE>
-What's your name?
+hey?
 <BLANKLINE>
-My name is:
+.
 <BLANKLINE>
-Axel
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+nice
 
-=================
+================
 Test for fail
-=================
+================
 
 >>> text_indentation(2)
 Traceback (most recent call last):
@@ -33,4 +37,4 @@ TypeError: text_indentation() missing 1 required positional argument: 'text'
 
 >>> text_indentation("spaceship", 2)
 Traceback (most recent call last):
-TypeError: print_square() takes 1 positional argument but 2 were given
+TypeError: text_indentation() takes 1 positional argument but 2 were given
