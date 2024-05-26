@@ -11,7 +11,7 @@ def matrix_divided(matrix, div):
 
     Returns:
         list of lists: all elements divided inside a new matrix
-    
+
     Raises:
     TypeError: If the matrix is not a list of integer or float
     of integers or floats,
@@ -37,6 +37,5 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
-    new_matrix = [[round(elem / div, 2)
-        for elem in row] for row in matrix]
+    new_matrix = [[round(elem / div, 2) for elem in row] for row in matrix]
     return new_matrix
