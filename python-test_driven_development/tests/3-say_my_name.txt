@@ -11,7 +11,7 @@ Test for success
 My name is Axel NAY
 
 >>> say_my_name("Axel")
-My name is Axel
+My name is Axel 
 
 =================
 Test for fail
