@@ -7,6 +7,9 @@ This function that divides all elements of a matrix.
 Test for success
 ================
 
+>>> text_indentation("Holberton")
+Holberton
+
 >>> text_indentation("Hello World. My name is Axel")
 Hello World.
 <BLANKLINE>
