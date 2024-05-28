@@ -5,12 +5,7 @@ for JSON serialization of an object"""
 import json
 
 def class_to_json(obj):
-    desc = {}
-
-    for item_name in dir(obj):
-        if not item_name.startswith('__'):
-            item_value = getattr(obj, item_name)
-            if isinstance(item_value, (list, dict, str, int, bool)):
-                desc = [item_name] = item_value
-
-    return desc
+    """Convert the dictionary description in JSON
+    Return:
+        The dictionary description in JSON"""
+    return obj.__dict__
