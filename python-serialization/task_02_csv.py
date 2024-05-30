@@ -17,8 +17,8 @@ def convert_csv_to_json(filename=""):
             json.dump(data, file_json, indent=4)
 
     except FileNotFoundError:
-        print(f"Erreur : Le fichier {filename} n'a pas été trouvé.")
+        print(f"file not found")
         return False
     except Exception as e:
-        print(f"Erreur : {e}")
+        print(f"Error")
         return False
