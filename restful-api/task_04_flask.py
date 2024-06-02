@@ -9,42 +9,50 @@ users = {}
 
 @app.route("/")
 def home():
-    """Handle the root URL route and provide a welcome message.
+    """
+    Handle the root URL route and provide a welcome message.
 
     Returns:
-        A welcome message to be displayed at the root URL."""
+            str: A welcome message to be displayed at the root URL.
+    """
     return "Welcome to the Flask API!"
 
 
 @app.route("/data")
 def data():
-    """Provide a list of all usernames stored in the system.
+    """
+    Provide a list of all usernames stored in the system.
 
     Returns:
-        A JSON response containing a list of all usernames."""
+            A JSON response containing a list of all usernames.
+    """
     return jsonify(list(users.keys()))
 
 
 @app.route("/status")
 def status():
-    """Check the status of the API and return a simple message.
+    """
+    Check the status of the API and return a simple message.
 
     Returns:
-        str: A status message indicating the API is running."""
+            str: A status message indicating the API is running.
+    """
     return "OK"
 
 
 @app.route("/users/<username>")
 def get_user(username):
-    """Fetch and return user details for a given username.
+    """
+    Fetch and return user details for a given username.
 
     Args:
-       username: The name of the user.
+            username: The username whose details are to be retrieved.
 
     Returns:
-       If the user exists, return their details as a JSON response.
-       If the user does not exist, return an error message
-       and a 404 status code."""
+            If the user exists, return their details as a JSON response.
+            If the user does not exist, return an error message
+            and a 404 status code.
+    """
     user = users.get(username)
     if user:
         return jsonify(user)
@@ -54,13 +62,15 @@ def get_user(username):
 
 @app.route("/add_user", methods=["POST"])
 def add_user():
-    """Add a new user to the system with the provided details.
+    """
+    Add a new user to the system with the provided details.
 
     Returns:
-       A JSON response with a confirmation message
-       and user details if successful.
-       If the username is missing or already exists,
-       return an appropriate error message."""
+            A JSON response with a confirmation message
+            and user details if successful.
+            If the username is missing or already exists,
+            return an appropriate error message.
+    """
     user_data = request.get_json()
     username = user_data.get("username")
     if not username:
