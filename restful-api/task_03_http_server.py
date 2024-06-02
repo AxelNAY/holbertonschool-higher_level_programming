@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-import http.server
-import socketserver
+from http.server import HTTPServer, BaseHTTPRequestHandler
 import json
 
 PORT = 8000
@@ -37,3 +36,6 @@ class Request(http.server.BaseHTTPRequestHandler):
             self.end_headers()
             error = {"Endpoint not found"}
             self.wfile.write(json.dumps(error).encode('utf-8'))
+
+httpd = HTTPServer(('', 8000), HttpRequestHandler)
+httpd.serve_forever()
