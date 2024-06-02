@@ -1,13 +1,9 @@
 #!/usr/bin/python3
-"""Returns the dictionary description with simple data structure
-for JSON serialization of an object"""
-
-import json
+"""Converts a Python object to a dictionary representation."""
 
 
 def class_to_json(obj):
-    """Convert the dictionary description in JSON
-
-    Return:
-        The dictionary description in JSON"""
+    """Converts a Python object to a dictionary representation.
+    Args:obj: The object to be converted.
+    Returns:A dictionary representation of the object."""
     return obj.__dict__
