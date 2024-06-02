@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """function to make a Pascal triangle of n"""
 
 
@@ -5,7 +6,7 @@ def pascal_triangle(n):
     """Make a list of lists of integers representing
     the Pascal's triangle of n.
 
-    Arg:
+    Args:
         n (int): the height of the triangle.
 
     Return:

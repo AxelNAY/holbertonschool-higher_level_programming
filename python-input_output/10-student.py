@@ -18,6 +18,7 @@ class Student:
 
     def to_json(self, attrs=None):
         """Convert the dictionary description in JSON
+
         Return:
             The dictionary description in JSON"""
         if attrs is None:
