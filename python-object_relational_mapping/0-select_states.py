@@ -33,6 +33,8 @@ if __name__ == "__main__":
                 print(row)
         else:
             print("Error: Data not found.")
+        cursor.close()
+        db.close()
 
     except MySQLdb.Error as error:
         print(f"Error: {error}")
