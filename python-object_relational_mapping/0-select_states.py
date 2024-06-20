@@ -1,3 +1,12 @@
+#!/usr/bin/python3
+"""
+Script that lists all states from the database hbtn_0e_0_usa.
+
+Args:
+    username: name of the mysql user.
+    password: password of the mysql user.
+    database_name: name of the mysql database.
+"""
 import MySQLdb
 import sys
 
