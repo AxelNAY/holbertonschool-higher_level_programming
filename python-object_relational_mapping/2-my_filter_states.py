@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 """
-Script that lists all states with a name starting
-with N (upper N) from the database hbtn_0e_0_usa.
+Script that takes in an argument and
+displays all values in the states table
+of hbtn_0e_0_usa where name matches the argument.
 
 Args:
-    mysql_username: name of the mysql user.
-    mysql_password: password of the mysql user.
+    username: name of the mysql user.
+    password: password of the mysql user.
     database_name: name of the mysql database.
     state_name: name of the state searched.
 """
@@ -20,14 +21,15 @@ if __name__ == "__main__":
 
     db = MySQLdb.connect(
         host = "localhost",
+        port = 3306,
         user = username,
         pwd = password,
-        db_name = database_name,
-        port = 3306
+        db_name = database_name
     )
 
     cursor = db.cursor()
-    select = cursor.execute("SELECT * FROM states WHERE name = state_name")
+    select = """SELECT * FROM states WHERE BINARY
+            name = '{}' ORDER BY id ASC""".format(state_name)
     cursor.execute(select)
     states = cursor.fetchall()
 
