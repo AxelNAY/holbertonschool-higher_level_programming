@@ -8,10 +8,10 @@ Args:
     mysql_password: password of the mysql user.
     database_name: name of the mysql database.
 """
-import MySQLdb
-import sys
 
 if __name__ == "__main__":
+    import MySQLdb
+    import sys
     username = sys.argv[1]
     password = sys.argv[2]
     database_name = sys.argv[3]
@@ -23,16 +23,13 @@ if __name__ == "__main__":
         db_name = database_name,
         port = 3306
     )
-        
+
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
+    select = cursor.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
+    cursor.execute(select)
     states = cursor.fetchall()
 
-    if states:
-        for state in states:
-            print(state)
-    else:
-        print("Error: Data not found.")
-
+    for state in states:
+        print(state)
     cursor.close()
     db.close()
