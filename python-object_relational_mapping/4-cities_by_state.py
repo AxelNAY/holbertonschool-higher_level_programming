@@ -8,10 +8,9 @@ Args :
     database (str) : name of the mysql database.
 """
 
-import sys
-import MySQLdb
-
 if __name__ == "__main__":
+    import MySQLdb
+    import sys
     if len(sys.argv) > 4 or ";" in sys.argv[3]:
         raise ValueError
     else:
@@ -19,27 +18,18 @@ if __name__ == "__main__":
         password = sys.argv[2]
         database = sys.argv[3]
 
-    db = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=username,
-        passwd=password,
-        db=database
-    )
+    db = MySQLdb.connect(host='localhost', user=username,
+                         passwd=password, db=database,
+                         port=3306)
 
-    cursor = db.cursor()
-    query = """
-    SELECT cities.id, cities.name, states.name
-    FROM cities
-    JOIN states ON cities.state_id = states.id
-    ORDER BY cities.id ASC
-    """
-    cursor.execute(query)
+    cur = db.cursor()
+    cur.execute("""SELECT cities.id, cities.name, states.name FROM cities,
+                 states WHERE states.id = cities.state_id
+                 ORDER BY cities.id ASC""")
 
-    cities = cursor.fetchall()
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
 
-    for city in cities:
-        print(city)
-
-    cursor.close()
+    cur.close()
     db.close()
