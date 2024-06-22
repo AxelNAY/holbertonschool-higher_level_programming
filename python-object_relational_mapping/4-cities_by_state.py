@@ -1,29 +1,29 @@
 #!/usr/bin/python3
 """
-Script that takes in arguments and displays all values in the states table
-of hbtn_0e_0_usa where name matches the argument. But this time,
-write one that is safe from MySQL injections!
+Se connecte à une base de données MySQL et
+liste toutes les villes de la table "cities"
+de la base de données "hbtn_0e_4_usa".
 
-Args:
-    username: name of the mysql user.
-    password: password of the mysql user.
-    database: name of the mysql database.
+Args :
+    nom_utilisateur (str) : Le nom d'utilisateur de la base de données MySQL.
+    mdp (str) : Le mot de passe de la base de données MySQL.
+    database (str) : Le nom de la base de données.
 """
 
 import sys
 import MySQLdb
 
 if __name__ == "__main__":
-    username = sys.argv[1]
-    password = sys.argv[2]
+    nom_utilisateur = sys.argv[1]
+    mdp = sys.argv[2]
     database = sys.argv[3]
 
     db = MySQLdb.connect(
-        host = "localhost",
-        port = 3306,
-        user = username,
-        pwd = password,
-        db_name = database
+        host="localhost",
+        port=3306,
+        user=nom_utilisateur,
+        passwd=mdp,
+        db=database
     )
 
     cursor = db.cursor()
