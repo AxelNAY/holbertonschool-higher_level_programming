@@ -12,9 +12,12 @@ import sys
 import MySQLdb
 
 if __name__ == "__main__":
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
+    if len(sys.argv) > 4 or ";" in sys.argv[3]:
+        raise ValueError
+    else:
+        username = sys.argv[1]
+        password = sys.argv[2]
+        database = sys.argv[3]
 
     db = MySQLdb.connect(
         host="localhost",
