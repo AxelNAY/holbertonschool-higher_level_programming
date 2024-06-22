@@ -5,10 +5,10 @@ of hbtn_0e_0_usa where name matches the argument. But this time,
 write one that is safe from MySQL injections!
 
 Args:
-    username: name of the mysql user.
-    password: password of the mysql user.
-    database_name: name of the mysql database.
-    state_name: name of the state searched.
+    username (str): name of the mysql user.
+    password (str): password of the mysql user.
+    database (str): name of the mysql database.
+    state_name (str): name of the state searched.
 """
 
 import sys
@@ -17,7 +17,7 @@ import MySQLdb
 if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
-    database_name = sys.argv[3]
+    database = sys.argv[3]
     state_name = sys.argv[4]
 
     db = MySQLdb.connect(
@@ -25,7 +25,7 @@ if __name__ == "__main__":
         port = 3306,
         user = username,
         pwd = password,
-        db_name = database_name
+        db_name = database
     )
 
     cursor = db.cursor()
