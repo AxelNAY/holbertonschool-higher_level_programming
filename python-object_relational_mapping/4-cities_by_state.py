@@ -11,9 +11,10 @@ Args:
     state_name: name of the state searched.
 """
 
+import sys
+import MySQLdb
+
 if __name__ == "__main__":
-    import sys
-    import MySQLdb
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
