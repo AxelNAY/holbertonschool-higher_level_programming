@@ -7,10 +7,9 @@ username: name of the mysql user.
 password: password of the mysql user.
 database: name of the mysql database.
 """
-
 if __name__ == "__main__":
-    import sys
     import MySQLdb
+    import sys
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
