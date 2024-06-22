@@ -1,28 +1,26 @@
 #!/usr/bin/python3
 """
-Se connecte à une base de données MySQL et
-liste toutes les villes de la table "cities"
-de la base de données "hbtn_0e_4_usa".
+This script lists all cities from the database hbtn_0e_4_usa.
 
 Args :
-    nom_utilisateur (str) : Le nom d'utilisateur de la base de données MySQL.
-    mdp (str) : Le mot de passe de la base de données MySQL.
-    database (str) : Le nom de la base de données.
+    username (str) : name of the mysql user.
+    password (str) : password of the mysql user.
+    database (str) : name of the mysql database.
 """
 
 import sys
 import MySQLdb
 
 if __name__ == "__main__":
-    nom_utilisateur = sys.argv[1]
-    mdp = sys.argv[2]
+    username = sys.argv[1]
+    password = sys.argv[2]
     database = sys.argv[3]
 
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
-        user=nom_utilisateur,
-        passwd=mdp,
+        user=username,
+        passwd=password,
         db=database
     )
 
