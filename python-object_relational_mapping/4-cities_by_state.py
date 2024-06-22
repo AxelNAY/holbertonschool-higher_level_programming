@@ -7,16 +7,16 @@ write one that is safe from MySQL injections!
 Args:
     username: name of the mysql user.
     password: password of the mysql user.
-    database_name: name of the mysql database.
+    database: name of the mysql database.
     state_name: name of the state searched.
 """
 
 if __name__ == "__main__":
-    import MySQLdb
     import sys
+    import MySQLdb
     username = sys.argv[1]
     password = sys.argv[2]
-    database_name = sys.argv[3]
+    database = sys.argv[3]
     state_name = sys.argv[4]
 
     db = MySQLdb.connect(
