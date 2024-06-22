@@ -3,11 +3,11 @@
 This script takes in an argument and displays all values in the states table
 of the database hbtn_0e_0_usa where the name matches the argument.
 
-Args :
-    username (str) : name of the mysql user.
-    password (str) : password of the mysql user.
-    database (str) : name of the mysql database.
-    state_name (str) : name of the state searched.
+Args:
+    username (str): name of the mysql user.
+    password (str): password of the mysql user.
+    database (str): name of the mysql database.
+    state_name (str): name of the state searched.
 """
 
 import sys

@@ -1,6 +1,12 @@
 #!/usr/bin/python3
 """
 This script lists all cities from the database hbtn_0e_4_usa.
+
+Args :
+    username (str) : name of the mysql user.
+    password (str) : password of the mysql user.
+    database (str) : name of the mysql database.
+    state_name (str) : name of the state searched.
 """
 
 if __name__ == "__main__":
