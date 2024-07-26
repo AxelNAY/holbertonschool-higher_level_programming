@@ -1,5 +1,5 @@
-ClickHeader = document.getElementById('red_header');
+const ClickHeader = document.getElementById('red_header');
 
 ClickHeader.addEventListener('click', function () {
-  document.querySelector('header').classList.add("red");
+  document.querySelector('header').classList.add('red');
 });
